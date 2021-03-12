@@ -1,0 +1,247 @@
+*{
+    margin: 0;
+
+}
+:root{
+    --fw-bold:800;
+    --fsize-h:3.2em;
+    --fsize-body:1.2em;
+    --fclr-pri:#3a2727;
+    --clr-pri:#ffc811;
+    --clr-light:#fff;
+    --clr-dark:#030202;
+}
+body{overflow-x: hidden;
+    font-size: var(--fsize-body);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 400;
+
+}
+img{ margin-left: 3em;
+    filter: drop-shadow(5px 19px 5px rgb(138, 133, 133)); 
+    z-index: 3;
+    
+}
+h2,h3{
+    font-size: var(--fsize-h);
+}
+p,.title{color: #3b2c2c;
+    letter-spacing: 2px;
+    margin-left: 10px;
+}
+strong{color:var(--clr-dark);
+    font-size:3.2em;
+    text-decoration: underline solid #3a2727 ;
+}
+.title{
+    margin-top: 2em;
+}
+nav{top: 0;
+    position: relative;
+    z-index: 1;
+}
+nav ul{
+    display: flex;
+}
+
+nav ul li{
+    list-style-type: none;
+    margin:3em 2em;
+}
+header{
+    height: auto;
+}
+.circle{
+    position: absolute;
+    background: var(--clr-pri);
+    clip-path: circle(350px at left);
+    top: 0;
+    left: 0;
+    width: 55%;height:100%;
+
+}
+.top-page{
+position: relative;
+z-index: 1;
+display: grid;
+gap: 2em;
+grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+
+}
+/*-----for laptop------------*/
+
+@media screen and (min-width:900px){
+    .top-page{
+        grid-template-columns: 1fr 1fr;
+    }
+    .top-page img{
+        padding: 2em 1em 1em 3em;
+        transform: scale(2);
+    }
+    .aboutus{
+        height: 100vh;
+    }
+    .fgrid{gap: 50px;
+        grid-template-columns: 1fr 1fr;
+    }
+    form{
+        margin-left: 4em;
+    }
+    ::placeholder{
+        color: #3b2c2c;
+        font-size: 1.3em;
+    }
+    
+}
+
+/*-----for 4K desktop------------*/
+@media screen and (min-width:1440px){
+    .circle{ top: 0;
+        left: 0;
+        clip-path:circle(700px at left);
+    }
+    img{padding: 3em;
+        transform: scale(1.2);
+        margin:1em 5em;
+    }
+}
+@media screen and (max-width:650px){
+    form{
+        display: none;
+    }
+}
+
+/* 
+
+important box shad ow  property
+box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+
+
+
+
+
+
+
+
+
+*/
+button{
+    padding: .2em 2em;
+    background-color: #ffc811;
+    font-size: 1.02em;
+    font-weight:500;
+    border:transparent;
+    border-radius: 1em;
+    transition: transform 200ms ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+li:hover{ cursor: pointer;
+border-bottom:2px solid #ffc811;
+}
+button:hover{
+    transform: scale(1.1);
+}
+a{
+    font-size: 1em;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--clr-dark);
+}
+.aboutus{ margin-top: 10%;
+    position: relative;
+    color: #fff;
+    z-index: 1;
+   
+    background:linear-gradient(to left,rgba(53, 53, 53, 0.726),rgba(0, 0, 0, 0.705)),url(/images/tacos.jpg) ;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.aboutus p{
+    color: white;
+}
+.aboutus h2{ text-align:center;
+    color: var(--clr-light);
+    
+
+}
+hr{
+    background: var(--clr-pri);
+    height: 4px;
+    border: transparent;
+    width: 70%;
+}
+.types span{color: var(--fclr-pri);
+  background: var(--clr-pri);
+  border-radius: 50%;
+  margin-right: 1em;
+}
+.curated h2{ position: relative;
+ margin: 2em 1em .2em; background: linear-gradient(90deg,#fff,#ffffb6);
+
+}
+
+.ourservices{position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px,1fr)); 
+
+    gap: 10px;
+}
+.card{ margin: 1em ;position: relative; display: flex; flex-direction: column;
+    /* display: block;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+
+}
+.card img{position: relative;
+    padding: .01em;
+    width: 150px;
+    transition: transform 200ms ease-in-out;
+    transition-duration: 5s;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.alter{
+    width: 250px;
+    height: 190px;
+}
+footer{position: relative;
+    height: 100vh; 
+}
+
+footer h2{position: relative; z-index: 1;    text-decoration: underline;text-align: center;
+}
+footer .circle-fo{
+    position: absolute;
+    background: var(--clr-pri);
+    clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0 100%);
+ 
+    width: 100vw;height:100%;
+}
+form{
+    margin: 2em;
+    background-color: #fff; padding: 3em 1em;
+    width: min-content;
+}
+.fgrid{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px,1fr)); 
+
+    gap: 2em;
+}
+.fgrid input{ margin: 1.5em 1em; width: 250px;
+    outline:#fff;
+    border-bottom:2px  solid #3b2c2c;
+    border-top: none;border-left:none ; border-right: none;
+    background-color: transparent;
+    
+}
+form button{
+    margin: 1em;
+}
+.address{ padding:1em;
+    margin: 1em;
+    width: min-content;
+    border-left: 5px solid olivedrab ;
+}
